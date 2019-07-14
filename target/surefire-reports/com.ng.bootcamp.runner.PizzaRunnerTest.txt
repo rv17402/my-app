@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ng.bootcamp.runner.PizzaRunnerTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 11, Time elapsed: 0.208 s - in com.ng.bootcamp.runner.PizzaRunnerTest
