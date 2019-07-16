@@ -22,3 +22,15 @@ And With special instructions"Please hurry!!! I am hungry"
 And Orders the pizza
 Then Order is verified
 #But Call customer service
+
+Scenario: Incomplete pizza order 
+Given User is on "Order Pizza" page
+And Orders "Large" pizza using "Cheese Stuffed Crust" crust and following toppings
+|Pepperoni|
+|Mushrooms|
+And Customer will "Pickup"And Orders the pizza
+When Order is verified
+Then verify the following error messsage is displayed
+|First Name is required.|
+|Last Name is required.|
+|Enter a valid phone number|
