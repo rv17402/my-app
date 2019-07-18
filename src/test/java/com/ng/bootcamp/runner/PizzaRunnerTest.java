@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(plugin = { "pretty" }, features = { "src/test/resources" }, glue = {
-		"com.ng.bootcamp.stepdef" }, dryRun = true)
+		"com.ng.bootcamp.stepdef" }, dryRun = false)
 
 public class PizzaRunnerTest {
 }

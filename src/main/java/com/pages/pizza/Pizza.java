@@ -21,10 +21,14 @@ public class Pizza extends BasePage {
 	By crustLocator = By.id("crust");
 	By toppingsLocator = By.xpath(("//*[contains(@class,'form-check-label')]"));
 	By instructionsLocator = By.id("instructions");
-	By orderLocator = By.xpath("//*[@id='react-app']/div/div/div/div[2]/div/div[2]/div/form/div[10]/button");
-	By pizzaHomeLocator = By.xpath(("//*[@id=\'pizzaPageLink\']"));
-	By verifyLocator = By.xpath("/html/body/div[2]/div/div[1]/div/div/div[2]");
-	By titleLocator = By.xpath("//*[@id=\"react-app\"]/div/div/div/div[2]/div/div[2]/div/div/h2");
+	By orderLocator = By.cssSelector("button.btn.btn-primary");
+	//.xpath("//*[@id='react-app']/div/div/div/div[2]/div/div[2]/div/form/div[10]/button");
+	By pizzaHomeLocator = By.cssSelector(("a#pizzaPageLink"));
+	By verifyLocator = //By.xpath("//div[text()='Click OK to return to the Main Dashboard']");
+			By.cssSelector(("div.modal-body"));
+			//.xpath("/html/body/div[2]/div/div[1]/div/div/div[2]");
+	By titleLocator = By.cssSelector("h2");
+	//		.xpath("//*[@id=\"react-app\"]/div/div/div/div[2]/div/div[2]/div/div/h2");
 
 	public Pizza() {
 		if (getDriver() == null) {
@@ -94,9 +98,9 @@ public class Pizza extends BasePage {
 	}
 	
 	public String verify() {
-		WebElement element = getDriver().findElement(verifyLocator);
-		new WebDriverWait(getDriver(), 20).until(ExpectedConditions.visibilityOf(element));
-		return element.getText();
+//		WebElement element = ;
+		new WebDriverWait(getDriver(), 20).until(ExpectedConditions.visibilityOf(getDriver().findElement(verifyLocator)));
+		return getDriver().findElement(verifyLocator).getText();
 	}
 
 }
